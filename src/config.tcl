@@ -59,3 +59,14 @@ set ::env(RT_MAX_LAYER) {met4}
 # connect to first digital rails
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
+
+set ::env(MACRO_PLACEMENT_CFG) "$::env(DESIGN_DIR)/macro.cfg"
+
+set ::env(VERILOG_FILES_BLACKBOX) " \
+      $::env(DESIGN_DIR)/RAM32.v"
+
+set ::env(EXTRA_LEFS) " \
+   $::env(DESIGN_DIR)/../lef/RAM32.lef"
+   
+set ::env(EXTRA_GDS_FILES) " \
+   $::env(DESIGN_DIR)/../gds/RAM32.gds"
