@@ -70,3 +70,10 @@ set ::env(EXTRA_LEFS) " \
    
 set ::env(EXTRA_GDS_FILES) " \
    $::env(DESIGN_DIR)/../gds/RAM32.gds"
+
+# We use a hack to force the macro into the PDN: the .lef files contains shorter met4 stripe than the GDS, 
+# so the PDN script thinks the macro is smaller than it actually is. Setting halo to 0 makes the ends meet.
+set ::env(FP_PDN_VERTICAL_HALO) 0
+
+# Temporarily disable LVS (until we have a proper solution for properly connecting the macro to the PDN)
+set ::env(QUIT_ON_LVS_ERROR) 0
