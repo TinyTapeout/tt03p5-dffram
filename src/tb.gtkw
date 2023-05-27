@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat May 27 18:12:39 2023
+[*]
+[dumpfile] "/home/uri/p/tt03p5-dffram/src/tb.vcd"
+[dumpfile_mtime] "Sat May 27 18:12:30 2023"
+[dumpfile_size] 3839
+[savefile] "/home/uri/p/tt03p5-dffram/src/tb.gtkw"
+[timestart] 0
+[size] 1908 999
+[pos] -1 -1
+*-25.412758 101300000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb.
+[sst_width] 214
+[signals_width] 254
+[sst_expanded] 1
+[sst_vpaned_height] 293
+@28
+tb.ena
+tb.rst_n
+tb.clk
+@22
+tb.addr[6:0]
+@29
+tb.we
+@22
+tb.data_in[7:0]
+tb.data_out[7:0]
+tb.bidirectional_is_output[7:0]
+[pattern_trace] 1
+[pattern_trace] 0
