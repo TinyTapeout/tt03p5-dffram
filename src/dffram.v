@@ -23,7 +23,7 @@ module tt_um_urish_dffram (
   wire WE2 = WE && (byte_index == 2);
   wire WE3 = WE && (byte_index == 3);
 
-  wire [4:0] bit_index = {3'b000, byte_index} << 3;
+  wire [4:0] bit_index = {byte_index, 3'b000};
   wire [31:0] Di0 = {24'b0, uio_in} << bit_index;
   wire [31:0] Do0;
   reg  [4:0] out_bit_index;
