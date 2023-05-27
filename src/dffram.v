@@ -15,6 +15,7 @@ module tt_um_urish_dffram (
   wire [1:0] byte_index = ui_in[1:0];
   
   assign uio_oe = 8'b0; // All bidirectional IOs are inputs
+  assign uio_out = 8'b0;
   
   wire WE = ui_in[7];
   wire WE0 = WE && (byte_index == 0);
@@ -25,7 +26,8 @@ module tt_um_urish_dffram (
   wire [4:0] bit_index = {3'b000, byte_index} << 3;
   wire [31:0] Di0 = {24'b0, uio_in} << bit_index;
   wire [31:0] Do0;
-  assign uo_out = Do0[bit_index +: 8];
+  reg  [4:0] out_bit_index;
+  assign uo_out = Do0[out_bit_index +: 8];
 
   RAM32 ram1 (
     .CLK(clk),
@@ -35,5 +37,13 @@ module tt_um_urish_dffram (
     .Di0(Di0),
     .Do0(Do0)
   );
+
+  always @(posedge clk)
+  begin
+    if(rst_n) begin
+      out_bit_index <= bit_index;
+    end else 
+      out_bit_index <= 0;
+  end
 
 endmodule
